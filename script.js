@@ -6,8 +6,8 @@ let employee = [];
 
 function readyNow(){
     //console.log('HIIII ');
-    $('.SubmitBtn').on('click', addNewEmployee);
-    //$('#button').on('click', appendToDom);
+    $('#addEmployeeBtn').on('click', addNewEmployee);
+    //$('#addEmployeeBtn').on('click', appendToDom);
    
 } // end onRead
 
@@ -32,12 +32,13 @@ addNewEmployee();   // calling addNewEmployee function
 function appendToDom(){
     console.log('Working!!!');
     //console.log($(this));
-   // $('.employee-data').empty();
+    let updateTd = $('.employee-data');
+    $(updateTd).empty();
     
     for(person of employee){
         $('.employee-data').empty().append(`
-        <td>${person.firstName}</td> <td>${person.lastName}</td>
-         <td>${person.ID}</td> <td>${person.title}</td> <td>${person.annualSalary}</td>
+        <td type = "text">` + person.firstName + `</td> <td type = "text">` +person.lastName + `</td>
+         <td type = "number">` + person.ID + `</td> <td tyype = "text">` + person.title + `</td> <td type = "number" class = "salary">` + person.annualSalary + `</td>
         `);
     }
         $('#first-name').val(''),
